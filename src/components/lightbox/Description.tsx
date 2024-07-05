@@ -1,4 +1,4 @@
-import { ActionIcon, Badge, Group, Stack, Text, Title, Tooltip, UnstyledButton } from "@mantine/core";
+import { ActionIcon, Badge, Group, Stack, Text, Title, Tooltip, UnstyledButton, rem } from "@mantine/core";
 import { RichTextEditor } from "@mantine/tiptap";
 import { IconCheck, IconEdit, IconX, IconNote as Note, IconTags as Tags, IconWand as Wand } from "@tabler/icons-react";
 import Document from "@tiptap/extension-document";
@@ -129,7 +129,12 @@ export function Description(props: Props) {
             )}
         </Stack>
         <div
-          style={{ borderStyle: !editMode ? "none" : "solid", border: "0.0625rem #ced4da", borderRadius: "0.25rem" }}
+          style={{
+            borderStyle: !editMode ? "none" : "solid",
+            borderColor: "#ced4da",
+            borderWidth: rem(0.0625),
+            borderRadius: "0.25rem",
+          }}
         >
           <RichTextEditor editor={editor} style={{ borderColor: "none" }}>
             <RichTextEditor.Content style={{ paddingRight: 10 }} />

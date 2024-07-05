@@ -139,30 +139,7 @@ export function SideMenuNarrow(): JSX.Element {
               />
             </Tooltip>
           )}
-          <div className={classes.text} style={{ paddingTop: 0, paddingBottom: 0 }}>
-            <Tooltip label={`Backend Version: ${imageInfos?.git_hash}`}>
-              <span style={{ flexGrow: 2 }}>
-                {imageInfos?.image_tag
-                  ? t("version", {
-                      version: imageInfos?.image_tag,
-                    })
-                  : ""}
-              </span>
-            </Tooltip>
-          </div>
         </div>
-        <a href={DOCUMENTATION_LINK} target="_blank" rel="noreferrer" className={classes.link}>
-          <ActionIcon className={classes.linkIcon} variant="light">
-            <Book />
-          </ActionIcon>
-          <span style={{ flexGrow: 2 }}>{t("docs")}</span>
-        </a>
-        <a href={SUPPORT_LINK} target="_blank" rel="noreferrer" className={classes.link}>
-          <ActionIcon className={classes.linkIcon} color="pink" variant="light">
-            <Heart />
-          </ActionIcon>
-          <span style={{ flexGrow: 2 }}>{t("supportus")}</span>
-        </a>
       </Navbar.Section>
     </Navbar>
   );

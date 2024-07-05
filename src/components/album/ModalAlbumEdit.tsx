@@ -30,7 +30,11 @@ export function ModalAlbumEdit(props: Props) {
   const [filteredUserAlbumList, setFilteredUserAlbumList] = useState(albumsUserList);
 
   useEffect(() => {
-    setFilteredUserAlbumList(albumsUserList.filter(el => fuzzyMatch(newAlbumTitle, el.title)));
+    if (albumsUserList && newAlbumTitle) {
+      setFilteredUserAlbumList(albumsUserList.filter(el => fuzzyMatch(newAlbumTitle, el.title)));
+    } else {
+      setFilteredUserAlbumList(albumsUserList);
+    }
   }, [newAlbumTitle, albumsUserList]);
 
   return (

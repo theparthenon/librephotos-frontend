@@ -3,7 +3,7 @@ import React from "react";
 
 import styles from "./styles.module.css";
 
-function GroupHeader({ settings, group, activeTileUrl }) {
+function GroupHeader({ settings, group, activeTileUrl = "" }) {
   return (
     <header
       className={styles.headerPositioner}

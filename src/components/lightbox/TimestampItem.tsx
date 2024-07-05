@@ -8,6 +8,7 @@ import {
   IconEdit as Edit,
   IconX as X,
 } from "@tabler/icons-react";
+import dayjs from "dayjs";
 import { DateTime } from "luxon";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -35,10 +36,8 @@ export function TimestampItem({ photoDetail, isPublic }: Props) {
 
   const { t } = useTranslation();
   const lang = i18nResolvedLanguage();
-  import(
-    /* @vite-ignore */
-    `dayjs/locale/${lang}.js`
-  );
+
+  dayjs.locale(lang);
 
   const onChangeDate = (date: Date) => {
     if (date && timestamp) {

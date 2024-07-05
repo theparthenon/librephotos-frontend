@@ -221,7 +221,8 @@
     "name": "Person name",
     "share": "Share",
     "unshare": "Unshare",
-    "joined": "Joined"
+    "joined": "Joined",
+    "loading": "Loading..."
   },
   "modalalbumsshare": {
     "title": "Share Album",

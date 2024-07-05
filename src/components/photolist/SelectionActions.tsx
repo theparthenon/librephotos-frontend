@@ -265,15 +265,16 @@ export function SelectionActions(props: Readonly<Props>) {
 
           <Menu.Item
             disabled={
-              (!route.location.pathname.startsWith("/person/") && !route.location.pathname.startsWith("/useralbum/")) ||
+              (!route.location?.pathname.startsWith("/person/") &&
+                !route.location?.pathname.startsWith("/useralbum/")) ||
               selectedItems.length !== 1
             }
             icon={<Photo />}
             onClick={() => {
-              if (route.location.pathname.startsWith("/person/")) {
+              if (route.location?.pathname.startsWith("/person/")) {
                 setAlbumCover("person");
               }
-              if (route.location.pathname.startsWith("/useralbum/")) {
+              if (route.location?.pathname.startsWith("/useralbum/")) {
                 setAlbumCover("useralbum");
               }
               updateSelectionState({
@@ -287,7 +288,7 @@ export function SelectionActions(props: Readonly<Props>) {
 
           <Menu.Item
             icon={<Share />}
-            disabled={!route.location.pathname.startsWith("/useralbum/")}
+            disabled={!route.location?.pathname.startsWith("/useralbum/")}
             onClick={onShareAlbum}
           >
             {`  ${t("selectionactions.sharing")}`}
@@ -295,7 +296,7 @@ export function SelectionActions(props: Readonly<Props>) {
 
           <Menu.Item
             icon={<FileMinus />}
-            disabled={!route.location.pathname.startsWith("/useralbum/") || selectedItems.length === 0}
+            disabled={!route.location?.pathname.startsWith("/useralbum/") || selectedItems.length === 0}
             onClick={() => {
               removePhotosFromAlbum({
                 id: albumID.toString(),

@@ -65,7 +65,7 @@ export default class Pig extends Component {
       renderedItems: [],
       selectedItems: [],
       scrollSpeed: "slow",
-      activeTileUrl: null,
+      activeTileUrl: "",
     };
 
     this.scrollThrottleMs = 300;
@@ -168,7 +168,7 @@ export default class Pig extends Component {
 
       // dismiss any active Tile
       const { activeTileUrl } = this.state;
-      if (activeTileUrl) this.setState({ activeTileUrl: null });
+      if (activeTileUrl) this.setState({ activeTileUrl: "" });
     });
   };
 
@@ -222,14 +222,14 @@ export default class Pig extends Component {
   defaultHandleClick = (event, item) => {
     // if an image is already the width of the container, don't expand it on click
     if (item.style.width >= this.containerWidth) {
-      this.setState({ activeTileUrl: null });
+      this.setState({ activeTileUrl: "" });
       return;
     }
 
     const { activeTileUrl } = this.state;
     this.setState({
       // if Tile is already active, deactivate it
-      activeTileUrl: item.url !== activeTileUrl ? item.url : null,
+      activeTileUrl: item.url !== activeTileUrl ? item.url : "",
     });
   };
 

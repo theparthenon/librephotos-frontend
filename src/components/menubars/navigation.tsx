@@ -77,20 +77,7 @@ export function getNavigationItems(
       ],
     },
     { label: t("sidemenu.facerecognition"), link: "/faces", icon: FaceId, color: "orange" },
-    {
-      label: t("sidemenu.sharing"),
-      link: "/users/",
-      display: isAuthenticated,
-      icon: Users,
-      color: "red",
-      submenu: [
-        { header: t("sidemenu.sharing") },
-        { label: t("sidemenu.publicphotos"), link: "/users/", icon: World, disabled: !canAccess },
-        { label: t("sidemenu.youshared"), link: "/shared/fromme/photos/", icon: Upload, color: "red" },
-        { label: t("sidemenu.sharedwithyou"), link: "/shared/tome/photos/", icon: Download, color: "green" },
-      ],
-    },
-    { label: t("photos.deleted"), link: "/deleted", icon: Trash, color: "black" },
+    { label: t("photos.deleted"), link: "/deleted", icon: Trash, color: "red" },
   ];
 }
 

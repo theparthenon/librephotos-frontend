@@ -1,7 +1,7 @@
 import "./wdyr";
 
 import "font-awesome/css/font-awesome.min.css";
-import React from "react";
+import React, { StrictMode } from "react";
 // css
 import { createRoot } from "react-dom/client";
 import "react-leaflet-markercluster/dist/styles.min.css";
@@ -15,9 +15,11 @@ import { libreHistory, store } from "./store/store";
 const container = document.getElementById("root");
 const root = createRoot(container!); // createRoot(container!) if you use TypeScript
 root.render(
-  <Provider store={store}>
-    <Router history={libreHistory}>
-      <App />
-    </Router>
-  </Provider>
+  <StrictMode>
+    <Provider store={store}>
+      <Router history={libreHistory}>
+        <App />
+      </Router>
+    </Provider>
+  </StrictMode>
 );
